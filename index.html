@@ -1,59 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ajusta al tamaño de celular -->
     <style>
         .back {
-
             position: fixed;
-            padding: 0;
-            margin: 0;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: white;
-            animation-name: backdiv;
-            animation-duration: 3500ms;
-            animation-iteration-count: infinite;
+            width: 100vw;
             height: 100vh;
+            background: white;
+            animation: backdiv 3.5s infinite;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* subimos el contenido */
+            align-items: center;
+            padding: 8% 5% 5% 5%; /* más espacio arriba */
+            box-sizing: border-box;
         }
 
         .heart {
-            position: absolute;
-            margin: auto;
-            top: 170px;
-            right: 0;
-            bottom: 0;
-            left: 0;
+            position: relative;
             background-color: yellow;
-            height: 150px;
-            width: 150px;
+            width: 30vw;   /* tamaño relativo a pantalla */
+            height: 30vw;
             transform: rotate(-45deg);
-            animation-name: beat;
-            animation-duration: 3500ms;
-            animation-iteration-count: infinite;
+            animation: beat 3.5s infinite;
+            margin-top: 40px; /* espacio extra entre texto y corazón */
+        }
+
+        .heart:after,
+        .heart:before {
+            content: "";
+            position: absolute;
+            background-color: yellow;
+            border-radius: 50%;
+            width: 30vw;
+            height: 30vw;
         }
 
         .heart:after {
-            background-color: yellow;
-            content: "";
-            border-radius: 50%;
-            position: absolute;
-            width: 150px;
-            height: 150px;
             top: 0;
-            left: 80px;
+            left: 50%;
         }
 
         .heart:before {
-            background-color: yellow;
-            content: "";
-            border-radius: 50%;
-            position: absolute;
-            width: 150px;
-            height: 150px;
-            top: -80px;
+            top: -50%;
             left: 0;
         }
 
@@ -67,68 +60,67 @@
             0% {
                 transform: scale(1) rotate(-45deg);
             }
-
             50% {
-                transform: scale(0.6) rotate(-45deg);
+                transform: scale(0.7) rotate(-45deg);
             }
         }
 
         .bday {
             text-align: center;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-            font-size: 15px;
+            font-size: 4vw; /* Tamaño relativo */
             font-family: 'Nunito', sans-serif;
             font-weight: 600;
             color: #0e2804;
-            margin: 20px auto;
-            padding: 15px;
+            margin-bottom: 30px; /* más separación respecto al corazón */
+            padding: 12px;
             background-color: #aded23;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 90%;
         }
 
         button {
             background-color: rgb(143, 216, 64);
-            display: block; 
-            margin: 20px auto; 
-            padding: 10px 20px; 
-            color: white; 
+            display: block;
+            margin: 25px auto;
+            padding: 12px 20px;
+            color: white;
             border: none;
-            margin-top: 70vh;
-             
+            border-radius: 10px;
+            font-size: 4vw;
         }
-        a{
+
+        a {
             color: black;
-            font-weight: 20px;
             text-decoration: none;
+            font-weight: bold;
         }
 
         .elements {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
-           
+            gap: 25px;
         }
     </style>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
     <title>MI AMORCITO</title>
 </head>
 <body>
     <div class="back">
-        <div class="bday">Hola mi chinita hermosa <br>Te envío esta flor amarilla como un pequeño gesto para iluminar tu día y recordarte lo especial que eres para mi. <br> Espero hacerte feliz. ¡Te amo!</div>
+        <div class="bday">
+            Hola mi chinita hermosa 💛<br>
+            Te envío esta flor amarilla como un pequeño gesto para iluminar tu día y recordarte lo especial que eres para mí. <br>
+            ¡Te amo!
+        </div>
         
         <div class="elements">
             <div class="heart"></div>
             <footer>
-                <div class="boton">
-                    <button><a href="index2.html"><span>PÚLSAMEEEE PO´FAVO</span></a></button>
-                </div>
+                <button><a href="index2.html">PÚLSAMEEEE PO´FAVO</a></button>
             </footer>
         </div>
-       
     </div>
-    
 </body>
 </html>
